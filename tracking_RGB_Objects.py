@@ -125,10 +125,8 @@ while True:
                         # them
                         if ptsR[i - 1] is None or ptsR[i] is None:
                             continue
-                        # otherwise, compute the thickness of the line and
-                        # draw the connecting lines
-                        thickness = int(np.sqrt(args["buffer"] / float(i + 1)) * 2.5)
-                        cv2.line(frame, ptsR[i - 1], ptsR[i], (0, 0, 255), thickness)
+                       
+                        cv2.line(frame, ptsR[i - 1], ptsR[i], (0, 0, 255), 3)
 
                 if lowers[0] == 100:
                     # Print("making blue line")
@@ -140,10 +138,8 @@ while True:
                         # them
                         if ptsB[i - 1] is None or ptsB[i] is None:
                             continue
-                        # otherwise, compute the thickness of the line and
-                        # draw the connecting lines
-                        thickness = int(np.sqrt(args["buffer"] / float(i + 1)) * 2.5)
-                        cv2.line(frame, ptsB[i - 1], ptsB[i], (255, 0, 0), thickness)
+              
+                        cv2.line(frame, ptsB[i - 1], ptsB[i], (255, 0, 0), 3)
 
                 if lowers[0] == 29:
                     cv2.circle(frame, centerG, 5, (0, 0, 255), -1)
@@ -154,10 +150,8 @@ while True:
                         # them
                         if ptsG[i - 1] is None or ptsG[i] is None:
                             continue
-                        # otherwise, compute the thickness of the line and
-                        # draw the connecting lines
-                        thickness = int(np.sqrt(args["buffer"] / float(i + 1)) * 2.5)
-                        cv2.line(frame, ptsG[i - 1], ptsG[i], (0, 255, 0), thickness)
+                        #draw tail
+                        cv2.line(frame, ptsG[i - 1], ptsG[i], (0, 255, 0), 3)
 
     # Show the frame after processing
     cv2.imshow("OUTPUT FRAME", frame)
